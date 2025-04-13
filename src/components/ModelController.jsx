@@ -11,12 +11,15 @@ function ModelController({ poseData, setPrediction }) {
             console.log('Attempting to load model...');
 
             const files = {
-                model: '/hand-sign-model/model.json',
-                weights: '/hand-sign-model/model.weights.bin',
-                metadata: '/hand-sign-model/model_meta.json',
+                model: 'https://quintenvanderblom.github.io/PoseGarden/hand-sign-model/model.json',
+                weights: 'https://quintenvanderblom.github.io/PoseGarden/hand-sign-model/model.weights.bin',
+                metadata: 'https://quintenvanderblom.github.io/PoseGarden/hand-sign-model/model_meta.json',
             };
 
-            Promise.all(
+
+
+
+                Promise.all(
                 Object.entries(files).map(([key, url]) =>
                     fetch(url)
                         .then(response => {
